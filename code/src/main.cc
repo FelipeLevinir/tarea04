@@ -106,12 +106,17 @@ int main(int argc, char *argv[])
 	float sumaParalela = 0.0;
 	// definición de mpi::reduce
 	//  https://www.boost.org/doc/libs/1_71_0/doc/html/boost/mpi/reduce.html
- 	if (world.rank() == 0) {
-    	int minimum;
-    	boost::mpi::reduce(world, numbersToSum, minimum, mpi::minimum<int>(), 0);
-  	}else {
-    	boost::mpi::reduce(world, numbersToSum, mpi::minimum<int>(), 0);
-  	}
+    
+	auto op = elementwise_add<int>();
+    auto c = op(a, b); // works fine
+
+    if (world.rank() == 0) {
+        std::vector<int> sum(N,0);
+        boost::mpi::reduce(world, a, sumaParcial, op, 0); // errors
+    } else {
+        boost::mpi::reduce(world, a, op, 0);
+    }
+
 	//boost::mpi::reduce(world, numbersToSum, , sumaParalela, 0);
 
 	//Finalmente, el proceso 0 muestra la suma paralela y el tiempo que tomó
