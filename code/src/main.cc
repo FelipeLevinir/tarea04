@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
 	delete[] numbersToShare;
 	return(EXIT_SUCCESS);
 }
-std::string min(const std::string &lhs, const std::string &rhs)
+std::integer min(const std::string &lhs, const std::string &rhs)
 {
   return lhs.size() < rhs.size() ? lhs : rhs;
 }
