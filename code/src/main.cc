@@ -108,9 +108,9 @@ int main(int argc, char *argv[])
 	//  https://www.boost.org/doc/libs/1_71_0/doc/html/boost/mpi/reduce.html
  	if (world.rank() == 0) {
     	int minimum;
-    	reduce(world, numbersToSum, minimum, mpi::minimum<int>(), 0);
+    	boost::mpi::reduce(world, numbersToSum, minimum, mpi::minimum<int>(), 0);
   	}else {
-    	reduce(world, numbersToSum, mpi::minimum<int>(), 0);
+    	boost::mpi::reduce(world, numbersToSum, mpi::minimum<int>(), 0);
   	}
 	//boost::mpi::reduce(world, numbersToSum, , sumaParalela, 0);
 
