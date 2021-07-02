@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 	//Cada procesa realiza su suma parcial
 	float sumaParcial = 0.0;
 	for(size_t idx = 0; idx < ntotalByProc; idx++){
-		sumaParcial += std::sin((numbersToSum[idx]))*std::cos((numbersToSum[idx]));
+		sumaParalela += std::sin((numbersToSum[idx]))*std::cos((numbersToSum[idx]));
 	}
 	
 	// ###############Completar código############
