@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
 	//realizarla.
 	if(world.rank() == 0) {
 		tiempoParalelo = T.elapsed() - timeStamp;
-		std::cout  << T.elapsed() << ">" << rankID << ": Suma Paralela:" << sumaParalela << std::endl;
+		std::cout  << T.elapsed() << "> " << rankID << ": Suma Paralela: " << sumaParalela << std::endl;
 		std::cout << T.elapsed() << "> " << rankID << ": Tiempo paralelo: " << tiempoParalelo << std::endl;
 	}
 	
