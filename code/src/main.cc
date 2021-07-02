@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 		
 		timeStamp = T.elapsed();
 		for(size_t idx = 0; idx < ntotal; idx++){
-			//std::cout  << rankID << ":" << numbersToShare[idx] << std::endl;
+			std::cout  << rankID << ":" << numbersToShare[idx] << std::endl;
 			sumaSecuencial += std::sin((numbersToShare[idx]))*std::cos((numbersToShare[idx]));
 		}
 	
