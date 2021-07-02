@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
 	// definición de mpi::reduce
 	//  https://www.boost.org/doc/libs/1_71_0/doc/html/boost/mpi/reduce.html
     
-	boost::mpi::reduce(world, *numbersToSum, sumaParcial, std::plus<float>(), 0);
+	boost::mpi::reduce(world, *numbersToSum, sumaParalela, std::plus<float>(), 0);
 
 	//Finalmente, el proceso 0 muestra la suma paralela y el tiempo que tomó
 	//realizarla.
