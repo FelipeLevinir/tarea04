@@ -5,8 +5,7 @@ chmod 700 run.sh. Una vez listo lo anterior se puede trabajar con el código, pa
 
 ./run <P> <N> 
 
-, donde <P>: cantidad de procesos a utilizar, <N>: cantidad de de número aleatorios a sumar. El script run.sh es un cargador que
-tiene las llamadas correctar a MPI para ejecutar su programa.
+, donde <P>: cantidad de procesos a utilizar, <N>: cantidad de de número aleatorios a sumar. El script run.sh es un cargador que tiene las llamadas correctar a MPI para ejecutar su programa.
 
 Ejemplo de uso:
 
