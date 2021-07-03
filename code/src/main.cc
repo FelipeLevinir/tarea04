@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 	int senderRank = 0;
 	// defininicón de mpi::scatter 
 	//   https://www.boost.org/doc/libs/1_71_0/doc/html/boost/mpi/scatter.html
-	boost::mpi::scatter(world, numbersToShare, numbersToSum, senderRank);
+	boost::mpi::scatter(world, *numbersToShare, *numbersToSum, ntotalByProc, senderRank);
 	
 	//Cada procesa realiza su suma parcial
 	float sumaParcial = 0.0;
